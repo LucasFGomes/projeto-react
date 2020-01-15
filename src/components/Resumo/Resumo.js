@@ -75,7 +75,7 @@ class Resumo extends Component {
                     }
                     <span className={"badge ml-1 " + (this.state.faturamento.anterior.comparativo > 0 ? "badge-success" : "badge-danger")}>
                       {this.state.faturamento.anterior.comparativo} %
-                                        </span>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -90,7 +90,7 @@ class Resumo extends Component {
                     }
                     <span className={"badge ml-1 " + (this.state.faturamento.previsao.comparativo > 0 ? "badge-success" : "badge-danger")}>
                       {this.state.faturamento.previsao.comparativo} %
-                                        </span>
+                    </span>
                   </div>
                 </div>
               </div>

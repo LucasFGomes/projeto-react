@@ -6,12 +6,15 @@ class Faturamento extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      detalhamento: []
+      faturamentos: {
+        detalhamento: []
+      }
     };
   }
 
-  componentDidMount() {
-    consultarFaturamento().then(dados => this.setState(dados));
+  async componentDidMount() {
+    const data = await consultarFaturamento();
+    this.setState({ faturamentos: data });
   }
 
   render() {
@@ -35,9 +38,9 @@ class Faturamento extends Component {
                 <tbody>
 
                   {
-                    this.state.detalhamento.map((item, indice) => {
+                    this.state.faturamentos.detalhamento.map((item, i) => {
                       return (
-                        <tr key={indice}>
+                        <tr key={i}>
                           <td>{item.descricao}</td>
                           <td className="text-right">
                             {item.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
